@@ -1,0 +1,11 @@
+C:\Users\Waleed\Documents\Visual Studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.exe.config
+C:\Users\Waleed\Documents\Visual Studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\obj\Release\Interop.Shell32.dll
+C:\Users\Waleed\Documents\Visual Studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.csproj.ResolveComReference.cache
+C:\Users\Waleed\Documents\Visual Studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.exe
+C:\Users\Waleed\Documents\Visual Studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.pdb
+C:\Users\Waleed\Documents\Visual Studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\bin\Release\Interop.Shell32.dll
+C:\Users\Waleed\Documents\Visual Studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.MainForm.resources
+C:\Users\Waleed\Documents\Visual Studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Waleed\Documents\Visual Studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Waleed\Documents\Visual Studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.exe
+C:\Users\Waleed\Documents\Visual Studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.pdb

@@ -1,0 +1,114 @@
+﻿=================
+Begin Activation Context Generation.
+Input Parameter:
+	Flags = 0
+	ProcessorArchitecture = AMD64
+	CultureFallBacks = en-US;en
+	ManifestPath = C:\Users\Waleed\Documents\Visual Studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.exe
+	AssemblyDirectory = C:\Users\Waleed\Documents\Visual Studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\bin\Release\
+	Application Config File = C:\Users\Waleed\Documents\Visual Studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.exe.Config
+-----------------
+INFO: Parsing Application Config File C:\Users\Waleed\Documents\Visual Studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.exe.Config.
+INFO: Parsing Manifest File C:\Users\Waleed\Documents\Visual Studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.exe.
+	INFO: Manifest Definition Identity is MyApplication.app,version="1.0.0.0".
+	ERROR: Line 19: The attribute UIAccess="true" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- A list of all Windows versions that this application is designed to work with. 
+      Windows will automatically select the most compatible environment.-->
+
+      <!-- If your application is designed to work with Windows Vista, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}"></supportedOS>-->
+
+      <!-- If your application is designed to work with Windows 7, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
+
+      <!-- If your application is designed to work with Windows 8, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}"></supportedOS>-->
+
+      <!-- If your application is designed to work with Windows 8.1, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}"/>-->
+
+    </application>
+  </compatibility>
+
+  <!-- Enable themes for Windows common controls and dialogs (Windows XP and later) -->
+  <!-- <dependency>
+    <dependentAssembly>
+      <assemblyIdentity
+          type="win32"
+          name="Microsoft.Windows.Common-Controls"
+          version="6.0.0.0"
+          processorArchitecture="*"
+          publicKeyToken="6595b64144ccf1df"
+          language="*"
+        />
+    </dependentAssembly>
+  </dependency>-->
+
+</asmv1:assembly>
+ is not permitted in this context on element requestedExecutionLevel.
+ERROR: Activation Context generation failed.
+End Activation Context Generation.
+
+=================
+Begin Activation Context Generation.
+Input Parameter:
+	Flags = 0
+	ProcessorArchitecture = Wow32
+	CultureFallBacks = en-US;en
+	ManifestPath = C:\Users\Waleed\Documents\Visual Studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.exe
+	AssemblyDirectory = C:\Users\Waleed\Documents\Visual Studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\bin\Release\
+	Application Config File = C:\Users\Waleed\Documents\Visual Studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.exe.Config
+-----------------
+INFO: Parsing Application Config File C:\Users\Waleed\Documents\Visual Studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.exe.Config.
+INFO: Parsing Manifest File C:\Users\Waleed\Documents\Visual Studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.exe.
+	INFO: Manifest Definition Identity is MyApplication.app,version="1.0.0.0".
+	ERROR: Line 19: The attribute UIAccess="true" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- A list of all Windows versions that this application is designed to work with. 
+      Windows will automatically select the most compatible environment.-->
+
+      <!-- If your application is designed to work with Windows Vista, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}"></supportedOS>-->
+
+      <!-- If your application is designed to work with Windows 7, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
+
+      <!-- If your application is designed to work with Windows 8, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}"></supportedOS>-->
+
+      <!-- If your application is designed to work with Windows 8.1, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}"/>-->
+
+    </application>
+  </compatibility>
+
+  <!-- Enable themes for Windows common controls and dialogs (Windows XP and later) -->
+  <!-- <dependency>
+    <dependentAssembly>
+      <assemblyIdentity
+          type="win32"
+          name="Microsoft.Windows.Common-Controls"
+          version="6.0.0.0"
+          processorArchitecture="*"
+          publicKeyToken="6595b64144ccf1df"
+          language="*"
+        />
+    </dependentAssembly>
+  </dependency>-->
+
+</asmv1:assembly>
+ is not permitted in this context on element requestedExecutionLevel.
+ERROR: Activation Context generation failed.
+End Activation Context Generation.
+

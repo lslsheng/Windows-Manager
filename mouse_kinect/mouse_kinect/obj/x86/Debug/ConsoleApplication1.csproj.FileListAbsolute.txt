@@ -1,0 +1,7 @@
+C:\Users\stephen\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\stephen\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\stephen\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Debug\Coding4Fun.Kinect.Wpf.dll
+C:\Users\stephen\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Debug\Microsoft.Expression.Drawing.dll
+C:\Users\stephen\AppData\Local\Temporary Projects\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+C:\Users\stephen\AppData\Local\Temporary Projects\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
+C:\Users\stephen\AppData\Local\Temporary Projects\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
