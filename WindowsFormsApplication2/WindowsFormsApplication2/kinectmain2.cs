@@ -53,7 +53,6 @@ public class MyHandTracker
                         if (body.IsTracked)
                         {
                             // Find the joints
-
                             this.listener(body);
                         }
                     }
@@ -70,23 +69,21 @@ public class Programkinect
 {
     int xPix = 2560;
     int yPix = 1440;
-    double xfactor = 5/3;
-    double yfactor = 5/3;
     int mouseX = 1280;
     int mouseY = 720;
-    double moveFactor = 1;
+    double moveFactor = 60;
     private static int BuffSize = 10;
-    private static int BuffThreshold = 8;
+    private static int BuffThreshold = 6;
     private static bool newGesture = false;
-    private Stack<Body> frameBuff = new Stack<Body>();
+    private Queue<Body> frameBuff = new Queue<Body>();
     private HandState lastLeftState = new HandState();
     private HandState lastRightState = new HandState();
     private CameraSpacePoint originalPos = new CameraSpacePoint();
     private double radius = 0.1;
 
     public Programkinect() {
-        originalPos.X = 0.24f;
-        originalPos.Y = -0.5f;
+        originalPos.X = 0.4f;
+        originalPos.Y = 0f;
         originalPos.Z = 0f;
     }
 
@@ -94,12 +91,12 @@ public class Programkinect
     {
         if (frameBuff.Count < BuffSize)
         {
-            frameBuff.Push(body);
+            frameBuff.Enqueue(body);
         }
         else
         {
-            frameBuff.Pop();
-            frameBuff.Push(body);
+            frameBuff.Dequeue();
+            frameBuff.Enqueue(body);
             checkBuff();
         }
 
@@ -120,7 +117,7 @@ public class Programkinect
             rightHandPoint.X += b.Joints[JointType.HandRight].Position.X - b.Joints[JointType.Neck].Position.X;
             rightHandPoint.Y += b.Joints[JointType.HandRight].Position.Y - b.Joints[JointType.Neck].Position.Y;
             rightHandPoint.Z += b.Joints[JointType.HandRight].Position.Z - b.Joints[JointType.Neck].Position.Z;
-            if (b.HandLeftConfidence == TrackingConfidence.High)
+         //   if (b.HandLeftConfidence == TrackingConfidence.High)
             {
                 if (last.HandRightState == b.HandRightState)
                 {
@@ -128,7 +125,7 @@ public class Programkinect
                 }
             }
 
-            if (b.HandRightConfidence == TrackingConfidence.High)
+           // if (b.HandRightConfidence == TrackingConfidence.High)
             {
                 if (last.HandLeftState == b.HandLeftState)
                 {
@@ -141,9 +138,12 @@ public class Programkinect
         rightHandPoint.Y /= 10;
         rightHandPoint.Z /= 10;
 
+
         if (voteLeftC >= BuffThreshold)
         {
-            if (lastLeftState != last.HandLeftState) {
+            if (lastLeftState != last.HandLeftState) 
+            {
+                //Form1.setTextBox(voteLeftC + "!!!!!!");
                 lastLeftState = last.HandLeftState;
                 newGesture = true;
             }
@@ -157,8 +157,9 @@ public class Programkinect
             }
         }
 
-        if (newGesture == true) {
-            handStateHandler(lastLeftState, lastRightState, rightHandPoint, last);
+        if (newGesture == true) 
+        {
+            handStateHandler(lastLeftState, lastRightState, rightHandPoint);
             newGesture = false;
         }
         
@@ -231,9 +232,10 @@ public class Programkinect
     void moveMouse(CameraSpacePoint position)
     {
         double distance = distanceBetweenPos(position, originalPos);
-        Form1.setTextBox(" " + (position.X - originalPos.X) + " " + (position.Y - -originalPos.Y));
+        //Form1.setTextBox(" " + position.X + " " + position.Y);
 
         if (distance < radius) return;
+        Form1.setTextBox("" + ((position.X - originalPos.X) / distance * moveFactor * (distance - radius)));
         mouseX = mouseX + (int)((position.X - originalPos.X) / distance * moveFactor * (distance - radius));
         mouseY = mouseY + (int)((position.Y - originalPos.Y) / distance * moveFactor * (distance - radius));
         mouseX = (mouseX >= 2560) ? 2560 : mouseX;
@@ -241,7 +243,7 @@ public class Programkinect
         mouseY = (mouseY >= 1440) ? 1440 : mouseY;
         mouseY = (mouseY <= 0) ? 0 : mouseY;
         Form1.setTextBox(mouseX.ToString() +" "+ mouseY.ToString());
-       // MouseOperations.SetCursorPosition(mouseX,yPix - mouseY);
+        MouseOperations.SetCursorPosition(mouseX,yPix - mouseY);
     }
 
 
@@ -252,13 +254,13 @@ public class Programkinect
     }
 
 
-    void handStateHandler(HandState left, HandState right, CameraSpacePoint pos, Body body) 
+    void handStateHandler(HandState left, HandState right, CameraSpacePoint pos) 
     {
         shortCut.ShortcutManager SChandler = new shortCut.ShortcutManager();
         Form1.setTextBox("new Gesture");
-        if (left == HandState.Closed && right == HandState.Closed) {
-            originalPos = pos;
-        }
+        //if (left == HandState.Closed && right == HandState.Closed) {
+          //  originalPos = pos;
+        //}
         if (left == HandState.NotTracked || left == HandState.Unknown)
         {
             switch (right)

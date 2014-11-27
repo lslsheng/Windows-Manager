@@ -24,3 +24,17 @@ C:\Users\wjkcow\Desktop\WindowsFormsApplication2\WindowsFormsApplication2\bin\De
 C:\Users\wjkcow\Desktop\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\InputSimulator.xml
 C:\Users\wjkcow\Desktop\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\Microsoft.Kinect.xml
 C:\Users\wjkcow\Desktop\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\Interop.Shell32.dll
+C:\Users\wjkcow\Desktop\Windows-Manager\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.exe.config
+C:\Users\wjkcow\Desktop\Windows-Manager\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.exe
+C:\Users\wjkcow\Desktop\Windows-Manager\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.pdb
+C:\Users\wjkcow\Desktop\Windows-Manager\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.exe
+C:\Users\wjkcow\Desktop\Windows-Manager\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.pdb
+C:\Users\wjkcow\Desktop\Windows-Manager\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\Interop.Shell32.dll
+C:\Users\wjkcow\Desktop\Windows-Manager\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\Microsoft.Kinect.dll
+C:\Users\wjkcow\Desktop\Windows-Manager\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\InputSimulator.pdb
+C:\Users\wjkcow\Desktop\Windows-Manager\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\InputSimulator.xml
+C:\Users\wjkcow\Desktop\Windows-Manager\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\Microsoft.Kinect.xml
+C:\Users\wjkcow\Desktop\Windows-Manager\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.csprojResolveAssemblyReference.cache
+C:\Users\wjkcow\Desktop\Windows-Manager\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Form1.resources
+C:\Users\wjkcow\Desktop\Windows-Manager\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Properties.Resources.resources
+C:\Users\wjkcow\Desktop\Windows-Manager\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.csproj.GenerateResource.Cache
