@@ -10,3 +10,8 @@ c:\users\waleed\documents\visual studio 2013\Projects\WindowsApplication1\Window
 c:\users\waleed\documents\visual studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\obj\Debug\Interop.Shell32.dll
 c:\users\waleed\documents\visual studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
 c:\users\waleed\documents\visual studio 2013\Projects\WindowsApplication1\WindowsFormsApplication1\bin\Debug\Interop.Shell32.dll
+C:\Users\wjkcow\Desktop\Windows-Manager\WindowsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\wjkcow\Desktop\Windows-Manager\WindowsApplication1\WindowsFormsApplication1\obj\Debug\Interop.Shell32.dll
+C:\Users\wjkcow\Desktop\Windows-Manager\WindowsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+C:\Users\wjkcow\Desktop\Windows-Manager\WindowsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\wjkcow\Desktop\Windows-Manager\WindowsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb

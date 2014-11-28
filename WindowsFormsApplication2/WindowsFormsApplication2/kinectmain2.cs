@@ -80,6 +80,8 @@ public class Programkinect
     private HandState lastRightState = new HandState();
     private CameraSpacePoint originalPos = new CameraSpacePoint();
     private double radius = 0.1;
+    int phase = 1;
+    int distance = 0;
 
     public Programkinect() {
         originalPos.X = 0.4f;
@@ -108,6 +110,7 @@ public class Programkinect
         Body last = frameBuff.Last<Body>();
         CameraSpacePoint leftHandPoint = new CameraSpacePoint();
         CameraSpacePoint rightHandPoint = new CameraSpacePoint();
+
         foreach (Body b in frameBuff)
         {
             leftHandPoint.X += b.Joints[JointType.HandLeft].Position.X - b.Joints[JointType.Neck].Position.X;
@@ -157,11 +160,9 @@ public class Programkinect
             }
         }
 
-        if (newGesture == true) 
-        {
-            handStateHandler(lastLeftState, lastRightState, rightHandPoint);
-            newGesture = false;
-        }
+        handStateHandler(lastLeftState, lastRightState, rightHandPoint, newGesture, last);
+        newGesture = false;
+        
         
         moveMouse(rightHandPoint);
         // leftHandPoint
@@ -232,17 +233,17 @@ public class Programkinect
     void moveMouse(CameraSpacePoint position)
     {
         double distance = distanceBetweenPos(position, originalPos);
-        //Form1.setTextBox(" " + position.X + " " + position.Y);
+        //Form1.setTextBox(" " + ((int)((position.X - originalPos.X) / distance * moveFactor * (distance - radius))) + " " );
 
         if (distance < radius) return;
-        Form1.setTextBox("" + ((position.X - originalPos.X) / distance * moveFactor * (distance - radius)));
+        //Form1.setTextBox("" + ((position.X - originalPos.X) / distance * moveFactor * (distance - radius)));
         mouseX = mouseX + (int)((position.X - originalPos.X) / distance * moveFactor * (distance - radius));
         mouseY = mouseY + (int)((position.Y - originalPos.Y) / distance * moveFactor * (distance - radius));
         mouseX = (mouseX >= 2560) ? 2560 : mouseX;
         mouseX = (mouseX <= 0) ? 0 : mouseX;
         mouseY = (mouseY >= 1440) ? 1440 : mouseY;
         mouseY = (mouseY <= 0) ? 0 : mouseY;
-        Form1.setTextBox(mouseX.ToString() +" "+ mouseY.ToString());
+        //Form1.setTextBox(mouseX.ToString() +" "+ mouseY.ToString());
         MouseOperations.SetCursorPosition(mouseX,yPix - mouseY);
     }
 
@@ -254,10 +255,45 @@ public class Programkinect
     }
 
 
-    void handStateHandler(HandState left, HandState right, CameraSpacePoint pos) 
+    void handStateHandler(HandState left, HandState right, CameraSpacePoint pos, bool newGesture, Body body) 
     {
         shortCut.ShortcutManager SChandler = new shortCut.ShortcutManager();
-        Form1.setTextBox("new Gesture");
+
+        if (newGesture)
+        {
+            if (right == HandState.Lasso) 
+            { 
+                MouseOperations.MouseEvent( MouseOperations.MouseEventFlags.LeftDown);
+                Form1.setTextBox("mouse Down");
+                MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftUp);
+            }
+        }
+
+        if (right == HandState.Closed && left == HandState.Closed)
+        {
+            if (phase == 1) {
+                distance = (int)(distanceBetweenPos(body.Joints[JointType.HandLeft].Position, body.Joints[JointType.HandRight].Position)*2000);
+                phase++;
+                //Form1.setTextBox("all closed");
+            }
+            else if (phase == 2) {
+                //Form1.setTextBox("dis:   " + (distanceBetweenPos(body.Joints[JointType.HandLeft].Position, body.Joints[JointType.HandRight].Position) * 2000));
+                if ((int)(distanceBetweenPos(body.Joints[JointType.HandLeft].Position, body.Joints[JointType.HandRight].Position)*2000) * 2 < distance)
+                {
+                    phase = 1;
+                    SChandler.MinimizeAll();
+                    //Form1.setTextBox("max");
+                }
+
+                if ((int)(distanceBetweenPos(body.Joints[JointType.HandLeft].Position, body.Joints[JointType.HandRight].Position)*2000) > distance * 2)
+                {
+                    phase = 1;
+                    SChandler.UndoMinimizeAll();
+                   // Form1.setTextBox("min");
+                }
+            }
+        }
+        //Form1.setTextBox("new Gesture");
         //if (left == HandState.Closed && right == HandState.Closed) {
           //  originalPos = pos;
         //}

@@ -47,7 +47,15 @@ namespace shortCut
         public void UndoMinimizeAll()
         {
             shell.UndoMinimizeALL();
+
         }
+
+        public void MinimizeAll()
+        {
+            shell.MinimizeAll();
+        }
+
+           
 
         public void LockComputer()
         {
