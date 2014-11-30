@@ -16,7 +16,7 @@ namespace KWManager
         static public double idleCenterX = 0.4;
         static public double idleCenterY = 0;
         static public double idleCenterZ = 0;
-
+        static public string videoPath = "test.mp3";
         static public int initMouseX = 1280;
         static public int initMouseY = 720;
         static public double alt_Tab_V = 200;
