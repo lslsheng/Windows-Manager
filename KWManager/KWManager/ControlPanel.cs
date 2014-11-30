@@ -19,6 +19,7 @@ namespace KWManager
         public ControlPanel()
         {
             this.KeyPreview = true;
+            this.Cursor = new Cursor("C:\\Users\\wjkcow\\Desktop\\Gnome.cur");
             InitializeComponent();
         }
 

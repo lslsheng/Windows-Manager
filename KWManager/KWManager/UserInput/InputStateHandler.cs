@@ -197,32 +197,32 @@ namespace KWManager
 
             if (from == InputState.Idle && to == InputState.Open_IE)
             {
-                userInputHandler.openIE();
+             //   userInputHandler.openIE();
             }
 
             if (from == InputState.Idle && to == InputState.Open_Video)
             {
-                userInputHandler.openVideo();
+               // userInputHandler.openVideo();
             }
 
             if (from == InputState.Idle && to == InputState.Alt_Tab_Wait)
             {
-                userInputHandler.holdAltTab();
+                //userInputHandler.holdAltTab();
             }
 
             if (from == InputState.Alt_Tab_Wait && to == InputState.Alt_Tab_left) 
             {
-                userInputHandler.alt_Tab_left();
+                //userInputHandler.alt_Tab_left();
             }
 
             if (from == InputState.Alt_Tab_Wait && to == InputState.Alt_Tab_right)
             {
-                userInputHandler.alt_Tab_right();
+                //userInputHandler.alt_Tab_right();
             }
 
             if ((from == InputState.Alt_Tab_left || from == InputState.Alt_Tab_right
                 || from == InputState.Alt_Tab_Wait) && to == InputState.Idle) {
-                    userInputHandler.alt_Tab_release();
+                  //  userInputHandler.alt_Tab_release();
             }
         }
 
