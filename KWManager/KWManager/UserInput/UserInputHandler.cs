@@ -25,13 +25,51 @@ namespace KWManager
             MouseOperations.SetCursorPosition(mouseX, Constants.maxYPix - mouseY);
         }
 
+        public void openIE() 
+        {
+            ControlPanel.setTextBox("open IE    ");
+            SChandler.openIE();
+        }
+
+        public void openVideo()
+        {
+            ControlPanel.setTextBox("open video");
+            SChandler.openVideo();
+        }
+
+        public void holdAltTab()
+        {
+            ControlPanel.setTextBox("alt_tab hold");
+            SChandler.holdAltTab();
+        }
+
+        public void alt_Tab_left()
+        {
+            ControlPanel.setTextBox("alt_tab left");
+            SChandler.alt_Tab_left();
+        }
+
+        public void alt_Tab_right()
+        {
+            ControlPanel.setTextBox("alt_tab right");
+            SChandler.alt_Tab_right();
+        }
+
+        public void alt_Tab_release()
+        {
+            ControlPanel.setTextBox("release alt_Tab");
+            SChandler.alt_Tab_release();
+        }
+
         public void pressWindow()
         {
+            ControlPanel.setTextBox("press Window");
             SChandler.pressWindow();
         }
 
         public void closeWindow()
         {
+            ControlPanel.setTextBox("Close Window");
             SChandler.CloseWindow();
         }
 
@@ -56,11 +94,13 @@ namespace KWManager
 
         public void holdMouseLeft() 
         {
+            ControlPanel.setTextBox("hold mouse left");
             MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftDown);
         }
 
         public void releaseMouse() 
         {
+            ControlPanel.setTextBox("release mouse");
             MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftUp);
             MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.RightUp);      
         }

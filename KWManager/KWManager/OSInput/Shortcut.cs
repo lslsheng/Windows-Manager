@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using WindowsInput;
+using KWManager;
 
 namespace ShortCut
 {
@@ -55,36 +57,47 @@ namespace ShortCut
             shell.MinimizeAll();
         }
 
-
-
-        public void LockComputer()
+        public void openIE()
         {
-            Process.Start(@"C:\Windows\System32\rundll32.exe", "user32.dll,LockWorkStation");
+            shell.ShellExecute("start iexplore");
         }
 
-        public void NextWindow()
+        public void holdAltTab()
         {
-            SendKeys.Send("%{TAB}");
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.LMENU);
+            InputSimulator.SimulateKeyPress(VirtualKeyCode.TAB);
+        }
+
+        public void alt_Tab_left()
+        {
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.LEFT);
+        }
+
+        public void alt_Tab_right()
+        {
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.RIGHT);
+        }
+
+        public void alt_Tab_release()
+        {
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.LMENU);
+        }
+
+        public void openVideo()
+        {
+            shell.ShellExecute(Constants.videoPath);
         }
 
         public void pressWindow()
         {
-            SendKeys.Send("%{Win}");
-        }
-
-        public void PreviousWindow()
-        {
-            SendKeys.Send("+%{TAB}");
+           InputSimulator.SimulateKeyPress(VirtualKeyCode.LWIN);
         }
 
         public void CloseWindow()
         {
-            SendKeys.Send("%{F4}");
-        }
-
-        public void PressTab()
-        {
-            SendKeys.Send("{TAB}");
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.LMENU);
+            InputSimulator.SimulateKeyPress(VirtualKeyCode.F4);
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.LMENU);
         }
     }
 }
