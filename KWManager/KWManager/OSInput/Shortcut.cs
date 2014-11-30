@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using 
 
 namespace ShortCut
 {
@@ -53,6 +54,32 @@ namespace ShortCut
         public void MinimizeAll()
         {
             shell.MinimizeAll();
+        }
+
+        public void openIE()
+        {
+            shell.ShellExecute("start iexplore");
+        }
+
+        public void holdAltTab()
+        {
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.LMENU);
+            SChandler.holdAltTab();
+        }
+
+        public void alt_Tab_left()
+        {
+            SChandler.alt_Tab_left();
+        }
+
+        public void alt_Tab_right()
+        {
+            SChandler.alt_Tab_right();
+        }
+
+        public void alt_Tab_release()
+        {
+            SChandler.alt_Tab_release();
         }
 
 

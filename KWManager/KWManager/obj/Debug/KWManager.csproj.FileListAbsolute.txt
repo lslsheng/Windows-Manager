@@ -13,3 +13,4 @@ C:\Users\wjkcow\Documents\KWManager\KWManager\bin\Debug\InputSimulator.xml
 C:\Users\wjkcow\Documents\KWManager\KWManager\bin\Debug\Microsoft.Kinect.xml
 C:\Users\wjkcow\Documents\KWManager\KWManager\obj\Debug\KWManager.exe
 C:\Users\wjkcow\Documents\KWManager\KWManager\obj\Debug\KWManager.pdb
+C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\bin\Debug\KWManager.exe.config

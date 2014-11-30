@@ -25,6 +25,31 @@ namespace KWManager
             MouseOperations.SetCursorPosition(mouseX, Constants.maxYPix - mouseY);
         }
 
+        public void openIE() 
+        {
+            SChandler.openIE();
+        }
+
+        public void holdAltTab()
+        {
+            SChandler.holdAltTab();
+        }
+
+        public void alt_Tab_left()
+        {
+            SChandler.alt_Tab_left();
+        }
+
+        public void alt_Tab_right()
+        {
+            SChandler.alt_Tab_right();
+        }
+
+        public void alt_Tab_release()
+        {
+            SChandler.alt_Tab_release();
+        }
+
         public void pressWindow()
         {
             SChandler.pressWindow();
