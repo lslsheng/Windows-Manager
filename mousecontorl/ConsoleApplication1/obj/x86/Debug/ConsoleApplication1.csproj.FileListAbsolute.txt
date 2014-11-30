@@ -1,6 +1,0 @@
-C:\Users\Admin\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
-C:\Users\Admin\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
-C:\Users\Admin\AppData\Local\Temporary Projects\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
-C:\Users\Admin\AppData\Local\Temporary Projects\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
-C:\Users\wjkcow\Desktop\Windows-Manager\mousecontorl\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
-C:\Users\wjkcow\Desktop\Windows-Manager\mousecontorl\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
