@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using WindowsInput;
 
+
 namespace KWManager
 {
     public partial class ControlPanel : Form
@@ -19,9 +20,9 @@ namespace KWManager
         public ControlPanel()
         {
             this.KeyPreview = true;
-            this.Cursor = new Cursor("C:\\Users\\wjkcow\\Desktop\\Gnome.cur");
             InitializeComponent();
         }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {

@@ -21,5 +21,6 @@ namespace KWManager
         static public int initMouseY = 720;
         static public double alt_Tab_V = 200;
         static public int handTrackDelay = 500;
+        static public CursorManager cursorManager = new CursorManager();
     }
 }
