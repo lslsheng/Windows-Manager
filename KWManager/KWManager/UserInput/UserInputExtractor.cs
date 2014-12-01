@@ -49,6 +49,9 @@ namespace KWManager
         {
             handTracked(newFrame);
             if (!leftHandTimer.poll() || !rightHandTimer.poll()) return;
+
+       //     ControlPanel.setTextBox(newFrame.leftState + " " + newFrame.rightState);
+
             inputStateHandler.input(newFrame);
             /*
             handTracked(newFrame);

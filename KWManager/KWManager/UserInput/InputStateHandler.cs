@@ -31,13 +31,14 @@ namespace KWManager
         UserInputHandler userInputHandler = new UserInputHandler();
 
         // for max and min window
-        int zoomRadiusFactor = 2;
+        double zoomRadiusFactor = 1.3;
     
 
 
         public void input(KinectFrameInfo newFrame){
             InputState nextState = transferRule(currentState, newFrame);
             transferTriger(currentState, nextState, newFrame);
+            currentState = nextState;
         }
 
         private InputState transferRule(InputState fromState, KinectFrameInfo newFrame){
@@ -54,6 +55,13 @@ namespace KWManager
                 return InputState.Click;
             }
 
+            if (fromState == InputState.Click && (newFrame.leftState == HandState.NotTracked
+                || newFrame.leftState == HandState.Unknown || newFrame.leftState == HandState.Open)
+                && newFrame.rightState == HandState.Closed)
+            {
+                return InputState.Click;
+            }
+
             if (fromState == InputState.Idle && (newFrame.leftState == HandState.NotTracked
                 || newFrame.leftState == HandState.Unknown || newFrame.leftState == HandState.Open)
                  && newFrame.rightState == HandState.Lasso)
@@ -61,23 +69,27 @@ namespace KWManager
                 return InputState.Hold_Left;
             }
 
-            if (fromState == InputState.Hold_Left && !((newFrame.leftState == HandState.NotTracked
+            if (fromState == InputState.Hold_Left && (newFrame.leftState == HandState.NotTracked
                 || newFrame.leftState == HandState.Unknown || newFrame.leftState == HandState.Open)
-                 && newFrame.rightState == HandState.Lasso))
+                 && newFrame.rightState == HandState.Lasso)
             {
-                return InputState.Idle;
+                return InputState.Hold_Left;
             }
+
 
             if (fromState == InputState.Idle && newFrame.leftState == HandState.Closed && 
                 newFrame.rightState == HandState.Closed) 
             {
                 zoom_init_dist = (int)distanceBetweenPos(newFrame.leftHandPos, newFrame.rightHandPos);
+                ControlPanel.setTextBox("Max Min start:   " + zoom_init_dist);
+                    
                 return InputState.Max_Min_Start;
 
             }
 
             if (fromState == InputState.Max_Min_Start && newFrame.leftState == HandState.Closed &&
                 newFrame.rightState == HandState.Closed) {
+                    
                     if ((int)distanceBetweenPos(newFrame.leftHandPos, newFrame.rightHandPos) * zoomRadiusFactor < zoom_init_dist)
                     {
                         return InputState.Minimize;
@@ -88,6 +100,7 @@ namespace KWManager
                         return InputState.Maxmize;
 
                     }
+                    return InputState.Max_Min_Start;
             
             }
 
@@ -151,7 +164,9 @@ namespace KWManager
 
         private void transferTriger(InputState from, InputState to, KinectFrameInfo newFrame) {
 
-            if (from == InputState.Idle && to == InputState.Idle) {
+            if ((from == InputState.Idle && to == InputState.Idle) || 
+                (from == InputState.Hold_Left && to == InputState.Hold_Left))
+            {
                 double dist = distToOrig(newFrame.rightHandPos);
                 if (dist < Constants.idleRadius) return;
                 int dx = (int)((newFrame.rightHandPos.X - Constants.idleCenterX) /
@@ -176,6 +191,8 @@ namespace KWManager
                 userInputHandler.releaseMouse();
                 return;
             }
+
+
             if (from == InputState.Max_Min_Start && to == InputState.Maxmize)
             {
                 userInputHandler.maxmizeWindow();

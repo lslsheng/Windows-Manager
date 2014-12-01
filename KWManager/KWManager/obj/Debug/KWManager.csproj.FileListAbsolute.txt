@@ -6,7 +6,6 @@ C:\Users\wjkcow\Documents\Windows-Manager\KWManager\KWManager\bin\Debug\KWManage
 C:\Users\wjkcow\Documents\Windows-Manager\KWManager\KWManager\bin\Debug\InputSimulator.dll
 C:\Users\wjkcow\Documents\Windows-Manager\KWManager\KWManager\bin\Debug\Interop.Shell32.dll
 C:\Users\wjkcow\Documents\Windows-Manager\KWManager\KWManager\bin\Debug\Microsoft.Kinect.dll
-C:\Users\wjkcow\Documents\Windows-Manager\KWManager\KWManager\bin\Debug\InputSimulator.pdb
 C:\Users\wjkcow\Documents\Windows-Manager\KWManager\KWManager\bin\Debug\InputSimulator.xml
 C:\Users\wjkcow\Documents\Windows-Manager\KWManager\KWManager\bin\Debug\Microsoft.Kinect.xml
 C:\Users\wjkcow\Documents\Windows-Manager\KWManager\KWManager\obj\Debug\KWManager.csprojResolveAssemblyReference.cache

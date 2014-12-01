@@ -10,11 +10,13 @@ namespace KWManager
     {
         int mouseX = Constants.initMouseX;
         int mouseY = Constants.initMouseY;
+        bool leftDown = false;
+        bool rightDown = false;
         ShortCut.ShortcutManager SChandler = new ShortCut.ShortcutManager();
 
         public void moveMouse(int dx, int dy)
         {
-            ControlPanel.setTextBox(mouseX.ToString() +" "+ mouseY.ToString());
+         //   ControlPanel.setTextBox(mouseX.ToString() +" "+ mouseY.ToString());
             mouseX += dx;
             mouseY += dy;
             mouseX = (mouseX >= Constants.maxXPix) ? Constants.maxXPix : mouseX;
@@ -89,20 +91,27 @@ namespace KWManager
         {
             ControlPanel.setTextBox("Mouse Clicking");
             MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftDown);
-            MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftUp);      
+            MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftUp);     
         }
 
         public void holdMouseLeft() 
         {
             ControlPanel.setTextBox("hold mouse left");
             MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftDown);
+            leftDown = true;
         }
 
         public void releaseMouse() 
         {
             ControlPanel.setTextBox("release mouse");
-            MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftUp);
-            MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.RightUp);      
+            if (leftDown) {
+                MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftUp);
+                leftDown = false;
+            }
+            if (rightDown) {
+                MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.RightUp);
+                rightDown = false;
+            }
         }
     }
 }

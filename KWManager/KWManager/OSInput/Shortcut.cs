@@ -27,7 +27,7 @@ namespace ShortCut
     class ShortcutManager
     {
         private Shell32.ShellClass shellHandle = new Shell32.ShellClass();
-
+        bool minized = false;
         private Shell32.IShellDispatch4 shell
         {
             get
@@ -48,15 +48,31 @@ namespace ShortCut
 
         public void UndoMinimizeAll()
         {
-            shell.UndoMinimizeALL();
+            if (minized)
+            {
+                InputSimulator.SimulateKeyDown(VirtualKeyCode.LWIN);
+                InputSimulator.SimulateKeyPress(VirtualKeyCode.VK_D);
+                InputSimulator.SimulateKeyUp(VirtualKeyCode.LWIN);
+                minized = false;
+            }
 
         }
 
         public void MinimizeAll()
         {
-            shell.MinimizeAll();
-        }
 
+            if (!minized)
+            {
+
+                InputSimulator.SimulateKeyDown(VirtualKeyCode.LWIN);
+                InputSimulator.SimulateKeyPress(VirtualKeyCode.VK_D);
+                InputSimulator.SimulateKeyUp(VirtualKeyCode.LWIN);
+                minized = true;
+            }
+
+
+        }
+            
         public void openIE()
         {
             shell.ShellExecute("start iexplore");
@@ -64,6 +80,7 @@ namespace ShortCut
 
         public void holdAltTab()
         {
+            ControlPanel.setTextBox("hold alt tab~~~");
             InputSimulator.SimulateKeyDown(VirtualKeyCode.LMENU);
             InputSimulator.SimulateKeyPress(VirtualKeyCode.TAB);
         }
@@ -75,11 +92,13 @@ namespace ShortCut
 
         public void alt_Tab_right()
         {
-            InputSimulator.SimulateKeyDown(VirtualKeyCode.RIGHT);
+            InputSimulator.SimulateKeyPress(VirtualKeyCode.TAB);
+            SendKeys.Send("%{TAB}");
         }
 
         public void alt_Tab_release()
         {
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.TAB);
             InputSimulator.SimulateKeyUp(VirtualKeyCode.LMENU);
         }
 

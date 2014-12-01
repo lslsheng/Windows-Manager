@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 using WindowsInput;
 
 
 namespace KWManager
 {
+
+
     public partial class ControlPanel : Form
     {
         int counter = 0;
@@ -31,6 +34,13 @@ namespace KWManager
             KinectInit handT = new KinectInit(mypro.frameHandler);
 
         }
+
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern void keybd_event(byte bVk, byte bScan, int dwFlags, int dwExtraInfo);
+
+        const int KEY_DOWN_EVENT = 0x0001; //Key down flag
+        const int KEY_UP_EVENT = 0x0002; //Key up flag
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -63,6 +73,7 @@ namespace KWManager
 
         }
 
+
         private void trigger_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.E)
@@ -74,19 +85,31 @@ namespace KWManager
             if (e.KeyCode == Keys.A)
             {
                 counter++;
+                keybd_event((byte)Keys.LMenu, 0, KEY_DOWN_EVENT, 0);
+                keybd_event((byte)Keys.Tab, 0, KEY_DOWN_EVENT, 0);
+                keybd_event((byte)Keys.Tab, 0, KEY_UP_EVENT, 0);
+                keybd_event((byte)Keys.Tab, 0, KEY_DOWN_EVENT, 0);
+                keybd_event((byte)Keys.Tab, 0, KEY_UP_EVENT, 0);
+
+
                 Debug.WriteLine(counter);
-                //  InputSimulator.SimulateKeyDown(VirtualKeyCode.LMENU);
-                // InputSimulator.SimulateKeyPress(VirtualKeyCode.TAB);
+            //    SendKeys.Send("%{TAB}");
+
+            //     InputSimulator.SimulateKeyDown(VirtualKeyCode.LMENU);
+             //    InputSimulator.SimulateKeyDown(VirtualKeyCode.TAB);
+  //               SendKeys.Send("%{TAB}");
             }
             if (e.KeyCode == Keys.B)
             {
                 Debug.WriteLine("BBBBBBB!");
-                // InputSimulator.SimulateKeyPress(VirtualKeyCode.TAB);
+                 InputSimulator.SimulateKeyPress(VirtualKeyCode.TAB);
+                 SendKeys.Send("%{TAB}");
             }
             if (e.KeyCode == Keys.F)
             {
                 Debug.WriteLine("FFFFFFFFFFFFFF!");
-                //InputSimulator.SimulateKeyUp(VirtualKeyCode.LMENU);
+                InputSimulator.SimulateKeyUp(VirtualKeyCode.TAB);
+                InputSimulator.SimulateKeyUp(VirtualKeyCode.LMENU);
             }
         }
         private void trigger_KeyPress(object sender, KeyPressEventArgs e)
