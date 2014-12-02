@@ -108,10 +108,21 @@ namespace KWManager
                 newFrame.rightState == HandState.Closed)
             {
                 return InputState.Command_key;
+            }
 
+            if (fromState == InputState.Command_key && newFrame.leftState == HandState.Lasso &&
+                newFrame.rightState == HandState.Closed)
+            {
+                return InputState.Command_key;
             }
 
             if (fromState == InputState.Idle && newFrame.leftState == HandState.Lasso &&
+                newFrame.rightState == HandState.Open)
+            {
+                return InputState.Close_Window;
+            }
+
+            if (fromState == InputState.Close_Window && newFrame.leftState == HandState.Lasso &&
                 newFrame.rightState == HandState.Open)
             {
                 return InputState.Close_Window;
@@ -123,7 +134,19 @@ namespace KWManager
                 return InputState.Open_Video;
             }
 
+            if (fromState == InputState.Open_Video && newFrame.leftState == HandState.Closed &&
+                newFrame.rightState == HandState.Lasso)
+            {
+                return InputState.Open_Video;
+            }
+
             if (fromState == InputState.Idle && newFrame.leftState == HandState.Closed &&
+                newFrame.rightState == HandState.Open)
+            {
+                return InputState.Open_IE;
+            }
+
+            if (fromState == InputState.Open_IE && newFrame.leftState == HandState.Closed &&
                 newFrame.rightState == HandState.Open)
             {
                 return InputState.Open_IE;

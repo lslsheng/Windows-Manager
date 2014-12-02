@@ -13,3 +13,16 @@ C:\Users\wjkcow\Documents\Windows-Manager\KWManager\KWManager\obj\Debug\KWManage
 C:\Users\wjkcow\Documents\Windows-Manager\KWManager\KWManager\obj\Debug\KWManager.Properties.Resources.resources
 C:\Users\wjkcow\Documents\Windows-Manager\KWManager\KWManager\obj\Debug\KWManager.csproj.GenerateResource.Cache
 C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\bin\Debug\KWManager.exe.config
+C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\bin\Debug\KWManager.exe
+C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\bin\Debug\KWManager.pdb
+C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\bin\Debug\InputSimulator.dll
+C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\bin\Debug\Interop.Shell32.dll
+C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\bin\Debug\Microsoft.Kinect.dll
+C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\bin\Debug\InputSimulator.xml
+C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\bin\Debug\Microsoft.Kinect.xml
+C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\obj\Debug\KWManager.csprojResolveAssemblyReference.cache
+C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\obj\Debug\KWManager.ControlPanel.resources
+C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\obj\Debug\KWManager.Properties.Resources.resources
+C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\obj\Debug\KWManager.csproj.GenerateResource.Cache
+C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\obj\Debug\KWManager.exe
+C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\obj\Debug\KWManager.pdb

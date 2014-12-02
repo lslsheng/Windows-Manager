@@ -75,35 +75,36 @@ namespace ShortCut
             
         public void openIE()
         {
-            shell.ShellExecute("start iexplore");
+            shell.ShellExecute("iexplore");
         }
 
         public void holdAltTab()
         {
-            ControlPanel.setTextBox("hold alt tab~~~");
-            InputSimulator.SimulateKeyDown(VirtualKeyCode.LMENU);
-            InputSimulator.SimulateKeyPress(VirtualKeyCode.TAB);
+           // ControlPanel.setTextBox("hold alt tab~~~");
+           // InputSimulator.SimulateKeyDown(VirtualKeyCode.LMENU);
+           // InputSimulator.SimulateKeyPress(VirtualKeyCode.TAB);
         }
 
         public void alt_Tab_left()
         {
-            InputSimulator.SimulateKeyDown(VirtualKeyCode.LEFT);
+           // InputSimulator.SimulateKeyDown(VirtualKeyCode.LEFT);
         }
 
         public void alt_Tab_right()
         {
-            InputSimulator.SimulateKeyPress(VirtualKeyCode.TAB);
-            SendKeys.Send("%{TAB}");
+           // InputSimulator.SimulateKeyPress(VirtualKeyCode.TAB);
+           // SendKeys.Send("%{TAB}");
         }
 
         public void alt_Tab_release()
         {
-            InputSimulator.SimulateKeyUp(VirtualKeyCode.TAB);
-            InputSimulator.SimulateKeyUp(VirtualKeyCode.LMENU);
+           // InputSimulator.SimulateKeyUp(VirtualKeyCode.TAB);
+           // InputSimulator.SimulateKeyUp(VirtualKeyCode.LMENU);
         }
 
         public void openVideo()
         {
+            ControlPanel.setTextBox(Constants.videoPath);
             shell.ShellExecute(Constants.videoPath);
         }
 
@@ -114,9 +115,7 @@ namespace ShortCut
 
         public void CloseWindow()
         {
-            InputSimulator.SimulateKeyDown(VirtualKeyCode.LMENU);
-            InputSimulator.SimulateKeyPress(VirtualKeyCode.F4);
-            InputSimulator.SimulateKeyUp(VirtualKeyCode.LMENU);
+            SendKeys.Send("%{F4}");
         }
     }
 }
