@@ -80,14 +80,14 @@ namespace ShortCut
 
         public void holdAltTab()
         {
-           // ControlPanel.setTextBox("hold alt tab~~~");
-           // InputSimulator.SimulateKeyDown(VirtualKeyCode.LMENU);
-           // InputSimulator.SimulateKeyPress(VirtualKeyCode.TAB);
+            ControlPanel.setTextBox("hold alt tab~~~");
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.LMENU);
+            InputSimulator.SimulateKeyPress(VirtualKeyCode.TAB);
         }
 
         public void alt_Tab_left()
         {
-           // InputSimulator.SimulateKeyDown(VirtualKeyCode.LEFT);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.LEFT);
         }
 
         public void alt_Tab_right()

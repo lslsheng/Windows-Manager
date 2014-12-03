@@ -45,15 +45,17 @@ namespace KWManager
         private void button1_Click(object sender, EventArgs e)
         {
             this.textBox1.Text = "Press A";
+             SendKeys.Send("%{TAB}");
 
-            InputSimulator.SimulateKeyDown(VirtualKeyCode.VK_E);
             Debug.WriteLine("Press E");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.textBox1.Text = "Press B";
-
+            keybd_event((byte)Keys.LMenu, 0, KEY_DOWN_EVENT, 0);
+            keybd_event((byte)Keys.Tab, 0, KEY_DOWN_EVENT, 0);
+            keybd_event((byte)Keys.Tab, 0, KEY_UP_EVENT, 0);
             // InputSimulator.SimulateKeyUp(VirtualKeyCode.TAB);
             Debug.WriteLine("Release E");
         }
@@ -79,17 +81,21 @@ namespace KWManager
             if (e.KeyCode == Keys.E)
             {
                 this.textBox1.Text = "Pressed";
+                keybd_event((byte)Keys.LMenu, 0, KEY_DOWN_EVENT, 0);
+                keybd_event((byte)Keys.Tab, 0, KEY_DOWN_EVENT, 0);
+                keybd_event((byte)Keys.Tab, 0, KEY_UP_EVENT, 0);
+                keybd_event((byte)Keys.Tab, 0, KEY_DOWN_EVENT, 0);
+                keybd_event((byte)Keys.Tab, 0, KEY_UP_EVENT, 0);
+                keybd_event((byte)Keys.LMenu, 0, KEY_UP_EVENT, 0);
+                InputSimulator.SimulateKeyDown(VirtualKeyCode.VK_E);
                 Debug.WriteLine("Pressed");
                 //SendKeys.Send("%({TAB})");
             }
             if (e.KeyCode == Keys.A)
             {
                 counter++;
-                keybd_event((byte)Keys.LMenu, 0, KEY_DOWN_EVENT, 0);
-                keybd_event((byte)Keys.Tab, 0, KEY_DOWN_EVENT, 0);
-                keybd_event((byte)Keys.Tab, 0, KEY_UP_EVENT, 0);
-                keybd_event((byte)Keys.Tab, 0, KEY_DOWN_EVENT, 0);
-                keybd_event((byte)Keys.Tab, 0, KEY_UP_EVENT, 0);
+                
+
 
 
                 Debug.WriteLine(counter);
