@@ -1,11 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using WindowsInput;
 using KWManager;
+using WindowsInput;
 
 namespace ShortCut
 {
@@ -28,6 +39,12 @@ namespace ShortCut
     {
         private Shell32.ShellClass shellHandle = new Shell32.ShellClass();
         bool minized = false;
+
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern void keybd_event(byte bVk, byte bScan, int dwFlags, int dwExtraInfo);
+
+        const int KEY_DOWN_EVENT = 0x0001; //Key down flag
+        const int KEY_UP_EVENT = 0x0002; //Key up flag
         private Shell32.IShellDispatch4 shell
         {
             get
@@ -81,8 +98,9 @@ namespace ShortCut
         public void holdAltTab()
         {
             ControlPanel.setTextBox("hold alt tab~~~");
-            InputSimulator.SimulateKeyDown(VirtualKeyCode.LMENU);
-            InputSimulator.SimulateKeyPress(VirtualKeyCode.TAB);
+            keybd_event((byte)Keys.LMenu, 0, KEY_DOWN_EVENT, 0);
+            keybd_event((byte)Keys.Tab, 0, KEY_DOWN_EVENT, 0);
+            keybd_event((byte)Keys.Tab, 0, KEY_UP_EVENT, 0);
         }
 
         public void alt_Tab_left()
@@ -92,12 +110,13 @@ namespace ShortCut
 
         public void alt_Tab_right()
         {
-           // InputSimulator.SimulateKeyPress(VirtualKeyCode.TAB);
+           InputSimulator.SimulateKeyPress(VirtualKeyCode.RIGHT);
            // SendKeys.Send("%{TAB}");
         }
 
         public void alt_Tab_release()
         {
+            keybd_event((byte)Keys.LMenu, 0, KEY_UP_EVENT, 0);
            // InputSimulator.SimulateKeyUp(VirtualKeyCode.TAB);
            // InputSimulator.SimulateKeyUp(VirtualKeyCode.LMENU);
         }

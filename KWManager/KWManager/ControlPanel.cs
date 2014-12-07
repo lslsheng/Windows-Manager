@@ -18,6 +18,7 @@ namespace KWManager
 
     public partial class ControlPanel : Form
     {
+        CursorManager cm = new CursorManager();
         int counter = 0;
 
         public ControlPanel()
@@ -84,9 +85,6 @@ namespace KWManager
                 keybd_event((byte)Keys.LMenu, 0, KEY_DOWN_EVENT, 0);
                 keybd_event((byte)Keys.Tab, 0, KEY_DOWN_EVENT, 0);
                 keybd_event((byte)Keys.Tab, 0, KEY_UP_EVENT, 0);
-                keybd_event((byte)Keys.Tab, 0, KEY_DOWN_EVENT, 0);
-                keybd_event((byte)Keys.Tab, 0, KEY_UP_EVENT, 0);
-                keybd_event((byte)Keys.LMenu, 0, KEY_UP_EVENT, 0);
                 InputSimulator.SimulateKeyDown(VirtualKeyCode.VK_E);
                 Debug.WriteLine("Pressed");
                 //SendKeys.Send("%({TAB})");

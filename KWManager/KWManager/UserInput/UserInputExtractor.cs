@@ -25,6 +25,7 @@ namespace KWManager
         private KinectFrameInfo lastFrame;
         InputStateHandler inputStateHandler = new InputStateHandler();
 
+        CursorManager cm = new CursorManager();
 
     
         // deal with untracked hands
@@ -49,6 +50,20 @@ namespace KWManager
         {
             handTracked(newFrame);
             if (!leftHandTimer.poll() || !rightHandTimer.poll()) return;
+            if (newFrame.rightState == HandState.NotTracked || newFrame.rightState == HandState.Unknown) {
+                return;
+            }
+            if (newFrame.rightState == HandState.Closed) {
+                cm.CursorClose();
+            }
+            if (newFrame.rightState == HandState.Lasso)
+            {
+                cm.CursorLasso();
+            }
+            if (newFrame.rightState == HandState.Open)
+            {
+                cm.CursorOpen();
+            } 
 
        //     ControlPanel.setTextBox(newFrame.leftState + " " + newFrame.rightState);
 
