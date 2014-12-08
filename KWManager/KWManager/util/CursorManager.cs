@@ -10,9 +10,9 @@ namespace KWManager
 {
     class CursorManager
     {
-        private static string openCur = @"C:\Users\wjkcow\Desktop\Gnome.cur";
-        private static string closeCur = @"C:\Users\wjkcow\Desktop\Gnome.cur";
-        private static string lassoCur = @"C:\Users\wjkcow\Desktop\Gnome.cur";
+        private static string openCur = @"C:\palm.cur";
+        private static string closeCur = @"C:\fist.cur";
+        private static string lassoCur = @"C:\lasso.cur";
 
         public CursorManager()
         {
@@ -25,8 +25,8 @@ namespace KWManager
         }
 
         public void CursorOpen() 
-        { 
-            
+        {
+            ChangeCursor(openCur);
         }
 
         public void CursorClose()

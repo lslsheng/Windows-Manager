@@ -15,6 +15,7 @@ namespace KWManager
 
         // secpol.msc
         // local policies => security options => user account ..... installed in secure... disabled
+
         [STAThread]
         static void Main()
         {
