@@ -20,7 +20,6 @@ C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\bin\Debug\Interop.Sh
 C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\bin\Debug\Microsoft.Kinect.dll
 C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\bin\Debug\InputSimulator.xml
 C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\bin\Debug\Microsoft.Kinect.xml
-C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\obj\Debug\KWManager.csprojResolveAssemblyReference.cache
 C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\obj\Debug\KWManager.ControlPanel.resources
 C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\obj\Debug\KWManager.Properties.Resources.resources
 C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\obj\Debug\KWManager.csproj.GenerateResource.Cache
@@ -40,3 +39,4 @@ C:\Users\jw\Documents\Windows-Manager\KWManager\KWManager\obj\Debug\KWManager.Co
 C:\Users\jw\Documents\Windows-Manager\KWManager\KWManager\obj\Debug\KWManager.Properties.Resources.resources
 C:\Users\jw\Documents\Windows-Manager\KWManager\KWManager\obj\Debug\KWManager.csproj.GenerateResource.Cache
 C:\Users\jw\Documents\Windows-Manager\KWManager\KWManager\obj\Debug\KWManager.csprojResolveAssemblyReference.cache
+C:\Users\wjkcow\Desktop\Windows-Manager\KWManager\KWManager\obj\Debug\KWManager.csprojResolveAssemblyReference.cache
