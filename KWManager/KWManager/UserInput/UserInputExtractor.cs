@@ -22,7 +22,7 @@ namespace KWManager
 
     class UserInputExtractor
     {
-        private KinectFrameInfo lastFrame;
+        private KinectFrameInfo lastFrame = new KinectFrameInfo();
         InputStateHandler inputStateHandler = new InputStateHandler();
 
         CursorManager cm = new CursorManager();
@@ -31,16 +31,10 @@ namespace KWManager
         // deal with untracked hands
         bool leftHandTracked = false;
         bool rightHandTracked = false;
+        bool newGesture = false;
         KWTimer leftHandTimer = new KWTimer();
         KWTimer rightHandTimer = new KWTimer();
-
-        // State for FSM of user input
-        // state = 0: idle, no user input
-        // state = 1: left_clicked
-        // state = 2: left_down
-        // state = 3: release
-        int state = 0;
-        
+        KWTimer newGTimer = new KWTimer();
 
         bool ifNewGesture(KinectFrameInfo newFrame){
             return true;
@@ -49,7 +43,7 @@ namespace KWManager
         public void handStateHandler(KinectFrameInfo newFrame)
         {
             handTracked(newFrame);
-            if (!leftHandTimer.poll() || !rightHandTimer.poll()) return;
+            if (!leftHandTimer.poll() || !rightHandTimer.poll()|| !newGTimer.poll()) return;
             if (newFrame.rightState == HandState.NotTracked || newFrame.rightState == HandState.Unknown) {
                 return;
             }
@@ -63,8 +57,8 @@ namespace KWManager
             if (newFrame.rightState == HandState.Open)
             {
                 cm.CursorOpen();
-            } 
-
+            }
+            lastFrame = newFrame;
        //     ControlPanel.setTextBox(newFrame.leftState + " " + newFrame.rightState);
 
             inputStateHandler.input(newFrame);
@@ -169,6 +163,19 @@ namespace KWManager
                     leftHandTimer.reset(Constants.handTrackDelay);
                     leftHandTracked = true;
                 }
+                else if (lastFrame.leftState != newFrame.leftState || lastFrame.rightState != newFrame.rightState)
+                {
+                    newGesture = false;
+                }
+                else
+                {
+                    if (!newGesture)
+                    {
+                        newGTimer.reset(Constants.handSwitchDelay);
+                        newGesture = true;
+                        lastFrame = newFrame;
+                    }
+                }
             }
 
             if (newFrame.rightState == HandState.Unknown || newFrame.rightState == HandState.NotTracked)
@@ -182,7 +189,22 @@ namespace KWManager
                     rightHandTimer.reset(Constants.handTrackDelay);
                     rightHandTracked = true;
                 }
+                
             }
+            /*
+            if (lastFrame.leftState != newFrame.leftState || lastFrame.rightState != newFrame.rightState)
+            {
+                newGesture = false;
+            }
+            else
+            {
+                if (!newGesture)
+                {
+                    newGTimer.reset(Constants.handSwitchDelay);
+                    newGesture = true;
+                    lastFrame = newFrame;
+                }
+            }*/
         }
 
 
